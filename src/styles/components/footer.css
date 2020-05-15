@@ -1,0 +1,45 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #202d32;
+  font-size: 0.7em;
+  box-shadow: inset -1px 5px 7px -2px rgba(0, 0, 0, 0.3),
+    0px -6px 7px -2px rgba(0, 0, 0, 0.3);
+}
+
+.contact {
+  color: #73C48F;
+  font-weight: bold;
+  margin-left: 1px;
+}
+
+.contact a {
+    color: #48B9C7;
+    text-decoration: underline;
+}
+
+.contact a:hover {
+    color: #fff;
+    background-color: #48B9C7;
+}
+.contact .author-username{
+    color: #7289da;
+    background-color: rgba(114,137,218,.1);
+    text-decoration: none;
+}
+
+.contact .author-username:hover{
+    background-color: #627FC5;
+    cursor: pointer;
+    color: #fff;
+}
+
+.timer {
+    padding-right: 1px;
+}
+
+@media screen and (min-width: 560px){
+    .footer{
+        font-size: 1em;
+    }
+}

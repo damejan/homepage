@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>homepage</title>
+  </head>
+  <body>
+    <main class="grid-container">
+      <form action="https://duckduckgo.com/" class="search-form" id="search-form">
+        <select id="searchEngine" class="select-engine" name="select">
+          <option value="DuckDuckGo" class="DDG">DuckDuckGo</option>
+          <option value="Google" class="Google">Google</option>
+          <option value="Bing" class="Bing">Bing</option>
+        </select>
+        <input
+          type="text"
+          id="searchBox"
+          name="q"
+          placeholder="search the web"
+          class="search-box"
+        />
+        <button type="submit" class="search-submit">
+          <i class="search-icon"></i>
+        </button>
+      </form>
+      <div class="terminal">
+        <div class="terminal-topbar">
+          <span class="terminal-title">terminal window</span>
+        </div>
+        <div class="terminal-content" id="terminal-wrapper">
+          <noscript>terminal doesn't work without javascript</noscript>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="contact">
+        2020
+        <a
+          href="https://telegram.com"
+          class="author-username"
+          title="contact me by telegram"
+          >@damian14443</a
+        >
+        <a href="https://github.io" title="source code on github"
+          >source_code</a
+        >
+      </div>
+      <div class="timer" id="timer">
+        00:00 AM
+      </div>
+    </footer>
+  </body>
+</html>
