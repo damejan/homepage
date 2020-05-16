@@ -9,8 +9,8 @@ import initSerachForm from './app/components/searchForm';
 
   const terminalWrapper = document.getElementById('terminal-wrapper');
   const terminal = new Terminal(terminalWrapper, {
-    username: 'ptaszux',
-    hostname: 'gnuj',
+    username: 'start',
+    hostname: 'page',
   });
   terminal.init();
 

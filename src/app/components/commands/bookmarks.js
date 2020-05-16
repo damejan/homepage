@@ -4,7 +4,7 @@ const restoreBookmarks = () => {
     return JSON.parse(bookmarks);
   }
   localStorage.setItem('bookmarks', JSON.stringify({ bookmarks: [] }));
-  return JSON.parse(localStorage.getItem('terminalConfig'));
+  return JSON.parse(localStorage.getItem('bookmarks'));
 };
 
 export default async () => {

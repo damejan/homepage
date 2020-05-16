@@ -84,9 +84,10 @@ class Terminal {
 
     const prompt = document.createElement('div');
     prompt.classList.add('prompt');
-    prompt.innerHTML = `<span style="color: #5A8B6B; font-weight: bold;">
-      ${this.config.username}@${this.config.hostname}</span>:`
-      + '<span style="color: #4398A2; font-weight: bold;">~</span>$ ';
+    prompt.innerHTML =
+      `<span style="color: #5A8B6B; font-weight: bold;">
+      ${this.config.username}@${this.config.hostname}</span>:` +
+      '<span style="color: #4398A2; font-weight: bold;">~</span>$ ';
 
     const input = document.createElement('input');
     input.classList.add('input');
