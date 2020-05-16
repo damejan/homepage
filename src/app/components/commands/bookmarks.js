@@ -9,9 +9,9 @@ const restoreBookmarks = () => {
 
 export default async () => {
   const bookmarks = restoreBookmarks();
-  let template = '<div style="display: flex; flex-flow: column wrap; align-items: flex-start;>';
+  let template = '<div style="display: flex; flex-flow: column wrap; align-items: flex-start">';
   bookmarks.bookmarks.forEach((bookmark) => {
-    template += `<a class="bookmarks-urls" 
+    template += `<a class="bookmarks-urls" \
     style="padding-bottom: 5px;" href="${bookmark.url}">${bookmark.name}</a>`;
   });
   template += '</div>';
