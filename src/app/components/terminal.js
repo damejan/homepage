@@ -6,6 +6,8 @@ class Terminal {
     this.config = config;
     this.promptWrapper = null;
     this.initTasks = [];
+    this.history = [];
+    this.historyPosition = -1;
   }
 
   async getUserInput(e) {
@@ -32,6 +34,7 @@ class Terminal {
       commandResponse.innerText = `${parserError}`;
     }
     this.terminal.appendChild(commandResponse);
+    this.history.unshift(userValue);
 
     this.terminal.appendChild(this.prompt());
     this.promptWrapper.input.focus();
@@ -81,7 +84,9 @@ class Terminal {
 
     const prompt = document.createElement('div');
     prompt.classList.add('prompt');
-    prompt.innerHTML = `${this.config.username}@${this.config.hostname}:~$ `;
+    prompt.innerHTML = `<span style="color: #5A8B6B; font-weight: bold;">
+      ${this.config.username}@${this.config.hostname}</span>:`
+      + '<span style="color: #4398A2; font-weight: bold;">~</span>$ ';
 
     const input = document.createElement('input');
     input.classList.add('input');
@@ -96,9 +101,34 @@ class Terminal {
   }
 
   shortcuts(e) {
-    // clear screen, ctrl+b
-    if (e.keyCode === 66 && e.ctrlKey) {
+    // clear screen, ctrl+x
+    if (e.keyCode === 88 && e.ctrlKey) {
       this.clear();
+    }
+
+    // arrow up
+    if (e.keyCode === 38) {
+      this.historyPosition += 1;
+      if (this.historyPosition > this.history.length - 1) {
+        this.historyPosition = this.history.length;
+        this.promptWrapper.input.value = this.history[this.history.length - 1];
+      } else {
+        this.promptWrapper.input.value = this.history[this.historyPosition];
+      }
+    }
+
+    // arrow down
+    if (e.keyCode === 40) {
+      if (this.historyPosition === this.history.length) {
+        this.historyPosition -= 1;
+      }
+      if (this.historyPosition < 0) {
+        this.historyPosition = 0;
+        this.promptWrapper.input.value = '';
+      } else {
+        this.promptWrapper.input.value = this.history[this.historyPosition];
+      }
+      this.historyPosition -= 1;
     }
   }
 

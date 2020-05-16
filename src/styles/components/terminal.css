@@ -44,8 +44,22 @@
   font-size: 1em;
 }
 
-@media screen and (min-height: 680px){
-  .terminal-content{
+.prompt-wrapper .prompt *{
+  display: inline;
+}
+
+.bookmarks-urls {
+  color: #48b9c7;
+  text-decoration: underline;
+}
+
+.bookmarks-urls:hover {
+  color: #fff;
+  background-color: #48b9c7;
+}
+
+@media screen and (min-height: 680px) {
+  .terminal-content {
     height: 28em;
   }
 }

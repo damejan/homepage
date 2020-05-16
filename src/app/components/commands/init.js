@@ -55,5 +55,5 @@ export default async (originalValue, parsedValue, terminal) => {
     `;
   }
 
-  return 'error';
+  return 'error, try with --help';
 };
